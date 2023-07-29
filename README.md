@@ -21,3 +21,12 @@ Install dependencies:
 Run dev server:
 
     yarn dev
+
+
+1. cloned repo into developer directory (locally)
+2. renamed the template
+3. git remote set-url origin https://github.com/alexdphan/alexdphan.github.io.git                 
+4. git remote add origin https://github.com/alexdphan/alexdphan.github.io.git
+   git branch -M main
+   git push -u origin main
+5. can clear history if you want (ask gpt)
