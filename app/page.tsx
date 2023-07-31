@@ -34,6 +34,7 @@ import ScrambleText from "components/ScrambleEffect";
 
 function PostCard(post: Post) {
   const formattedDate = format(parseISO(post.date), 'LLLL d, yyyy');
+  // const Content = getMDXComponent(post.body.code);
 
   return (
     <div className="mb-8">
@@ -54,7 +55,7 @@ function PostCard(post: Post) {
         </span>
       </time>
       <div className="text-sm">
-        {/* <Content />  This is the actual content of markdown page  */}
+        {/* <Content /> This is the Actual content in the markdown files */}
       </div>
     </div>
   );
@@ -68,6 +69,9 @@ export default function Home() {
   const posts = allPosts.sort((a, b) =>
     compareDesc(new Date(a.date), new Date(b.date))
   );
+
+  // console.log(posts); 
+  // console.log(allPosts);
 
   return (
     <div className="max-w-xl py-8 mx-auto">
