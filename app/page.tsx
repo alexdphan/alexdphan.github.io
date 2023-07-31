@@ -1,33 +1,67 @@
+"use client";
+
 import Link from "next/link";
 import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts, Post } from "contentlayer/generated";
 import { getMDXComponent } from "next-contentlayer/hooks";
 import { Body } from '../components/Body';
 
+import ScrambleText from "components/ScrambleEffect";
 
 // postcard component
+// function PostCard(post: Post) {
+//   const Content = getMDXComponent(post.body.code);
+
+//   return (
+//     <div className="mb-8">
+//       <h2 className="text-xl">
+//         <Link
+//           href={post.url}
+//           className="text-blue-700 hover:text-blue-900"
+//           legacyBehavior>
+//           {post.title}
+//         </Link>
+//       </h2>
+//       <time dateTime={post.date} className="block mb-2 text-xs text-gray-600">
+//         {format(parseISO(post.date), "LLLL d, yyyy")}
+//       </time>
+//       <div className="text-sm">
+//         {/* <Content />  This is the actual content of markdown page  */}
+//       </div>
+//     </div>
+//   );
+// }
+
 function PostCard(post: Post) {
-  const Content = getMDXComponent(post.body.code);
+  const formattedDate = format(parseISO(post.date), 'LLLL d, yyyy');
 
   return (
     <div className="mb-8">
       <h2 className="text-xl">
         <Link
           href={post.url}
-          className="text-blue-700 hover:text-blue-900"
-          legacyBehavior>
-          {post.title}
+          className="text-blue-700 cursor-pointer hover:text-blue-900"
+          legacyBehavior
+        >
+          <span className="cursor-pointer">
+            <ScrambleText text={post.title} />
+          </span>
         </Link>
       </h2>
       <time dateTime={post.date} className="block mb-2 text-xs text-gray-600">
-        {format(parseISO(post.date), "LLLL d, yyyy")}
+        <span className="cursor-pointer">
+          <ScrambleText text={formattedDate} />
+        </span>
       </time>
       <div className="text-sm">
-        <Content />
+        {/* <Content />  This is the actual content of markdown page  */}
       </div>
     </div>
   );
 }
+
+
+
 
 // shows the list of posts in postcards
 export default function Home() {
@@ -37,7 +71,6 @@ export default function Home() {
 
   return (
     <div className="max-w-xl py-8 mx-auto">
-      
       <Body />
       {posts.map((post, idx) => (
         <PostCard key={idx} {...post} />

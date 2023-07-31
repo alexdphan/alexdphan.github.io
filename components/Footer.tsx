@@ -1,3 +1,5 @@
+"use client";
+
 import { CalendarIcon } from '@radix-ui/react-icons';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -8,35 +10,47 @@ import {
   HoverCardTrigger,
 } from '@/components/ui/hover-card';
 
+import ScrambleText from "components/ScrambleEffect";
+
 export function Footer() {
   return (
-    <footer className="flex justify-end max-w-xl p-8 py-8 mx-auto space-x-4">
+    <footer className="flex justify-end p-8 py-8 space-x-4">
       <Button
         variant="link"
         className="underline hover:underline-offset-4 text-muted-foreground"
       >
-        Twitter
+        <div style={{ width: '70px', height: '20px' }}>
+          <ScrambleText text="Twitter" delay={1.5} />
+        </div>
       </Button>
       <Button
         variant="link"
         className="underline hover:underline-offset-4 text-muted-foreground"
       >
-        Github
+        <div style={{ width: '60px', height: '20px' }}>
+          <ScrambleText text="Github" delay={1.5} />
+        </div>
       </Button>
       <Button
         variant="link"
         className="underline hover:underline-offset-4 text-muted-foreground"
       >
-        LinkedIn
+        <div style={{ width: '80px', height: '20px' }}>
+          <ScrambleText text="LinkedIn" delay={1.5} />
+        </div>
       </Button>
       <Button
         variant="link"
         className="underline hover:underline-offset-4 text-muted-foreground"
       >
-        Email
+        <div style={{ width: '50px', height: '20px' }}>
+          <ScrambleText text="Email" delay={1.5} />
+        </div>
       </Button>
       {/* <Button variant="link" className="underline hover:underline-offset-4">
-        alexphan.eth
+        <div style={{width: '100px', height: '20px'}}>
+          <ScrambleText text="alexphan.eth" delay={1.5} />
+        </div>
       </Button> */}
     </footer>
   );

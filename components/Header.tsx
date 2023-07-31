@@ -1,5 +1,8 @@
+"use client";
+
 import Link from 'next/link'
 import { Button } from '@/components/ui/button';
+import ScrambleText from "components/ScrambleEffect";
 
 // function Icon() {
 //   return (
@@ -36,21 +39,26 @@ import { Button } from '@/components/ui/button';
 //   )
 // }
 
+// added a fixed width and height to fill in space before text loads in from animation
 export function Header() {
   return (
-    <header className="flex justify-end max-w-xl p-8 py-8 mx-auto space-x-4">
+    <header className="flex justify-end p-8 py-8 space-x-4">
       {/* <Logo /> */}
       <Button variant="link" className="underline hover:underline-offset-4">
-        Home
+        <div style={{ width: '50px', height: '20px' }}>
+          <ScrambleText text="Home" delay={1.5} />
+        </div>
       </Button>
       <Button variant="link" className="underline hover:underline-offset-4">
-        About
+        <div style={{ width: '60px', height: '20px' }}>
+          <ScrambleText text="About" delay={1.5} />
+        </div>
       </Button>
       <Button variant="link" className="underline hover:underline-offset-4">
-        Contact
+        <div style={{ width: '40px', height: '20px' }}>
+          <ScrambleText text="Now" delay={1.5} />
+        </div>
       </Button>
     </header>
   );
 }
-
-
