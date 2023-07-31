@@ -2,7 +2,10 @@ import Link from "next/link";
 import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts, Post } from "contentlayer/generated";
 import { getMDXComponent } from "next-contentlayer/hooks";
+import { Body } from '../components/Body';
 
+
+// postcard component
 function PostCard(post: Post) {
   const Content = getMDXComponent(post.body.code);
 
@@ -26,6 +29,7 @@ function PostCard(post: Post) {
   );
 }
 
+// shows the list of posts in postcards
 export default function Home() {
   const posts = allPosts.sort((a, b) =>
     compareDesc(new Date(a.date), new Date(b.date))
@@ -33,8 +37,8 @@ export default function Home() {
 
   return (
     <div className="max-w-xl py-8 mx-auto">
-      <h1 className="mb-8 text-3xl font-bold text-center">Next.js Example</h1>
-
+      
+      <Body />
       {posts.map((post, idx) => (
         <PostCard key={idx} {...post} />
       ))}
