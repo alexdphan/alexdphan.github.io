@@ -3,62 +3,155 @@ title: What's This?
 date: 2023-07-30
 ---
 
-What's this? Just starting something new.
-I'm excited to try things out of my comfort zone. 
-More coming soon.
 
-Hopefully the format works. Typing this in Obsidian :D
+Normal Text
 
+# H1
+## H2
+### H3
+Bold **bold text**
+
+Italic _italicized text_
+
+Blockquote > blockquote
+
+Strikethrough ~~The world is flat.~~
+
+Ordered List
+
+1. First item
+2. Second item
+3. Third item
+
+Unordered List / Bullet Points
+
+- First item
+- Second item
+- Third item
+
+Code `This is inline code`
+
+Horizontal Rule: Try to put a blank line before...
 
 ---
 
-## What do you think? 
+...and after a horizontal rule.
 
-# Headings don’t work
+Link [title](https://www.example.com)
+
+| Table     | Syntax | Description |
+| --------- | ------ | ----------- |
+| Header    | Title  | Text        |
+| Paragraph | Text   | Text        |
+
+---
+
+# Markdown Previewer
+
+---
+
+> **Note:** This is a note, quote, or blockquote
 
 
-```
-chicken mgnuggets
-```
+<Callout emoji="💡">
 
-Seems cool 
+This is a callout
 
-> Something cool must happen
+</Callout>
 
-![![git-remote/posts/#^Table]
+Emoji! 😀
 
-> [!NOTE]
-> Somtimes the tought time s gcome outiajngjanglajnjnjanjaContent
+Image from url
+![A cute kitten](https://placekitten.com/200/300)
 
-1. Efwg
-2. Adsgfa
-3. Adgfadf
-4. Adgf
-5. A
+Gif from local
+![NFT](/images/nft.gif)
 
-![[FInalExam1 1.jpg]]
+Image from local
+![Patrick](/images/patrick.png)
 
-$$
-hello
-$$ $
+Rounded Image from local
+<Image src="/images/patrick.png" alt="Patrick" width="200" height="200" />
 
-[[Prompts I use with chatgpt]]
+<ConsCard
+  title="vanilla CSS"
+  cons={[`You're building a large web application.`]}
+/>
 
-[[Sanity.io]]
+<ProsCard
+  title="vanilla CSS"
+  pros={[
+    `You don't want to add a toolchain. Vanilla CSS works with every browser & language.`,
+  ]}
+/>
 
-[Working with the app directory in Next.js 13 - LogRocket Blog](https://blog.logrocket.com/next-js-13-app-directory/#page-directory-vs-app-directory)
+<a href="https://www.example.com">This link will use CustomLink</a>
 
-[Next.js 13: complete guide to Server Components and the App Directory](https://makerkit.dev/blog/tutorials/nextjs13)
+Here's an [internal link](/another-post), an [anchor link](#section-1), and an [external link](https://example.com).
 
-[Docs | Next.js](https://nextjs.org/docs)
 
-## Typography [[Typography]]
+Combining with multiple attributes: [internal link](/another-post "A link to another post")
+I love supporting the **[EFF](https://eff.org)**.
+This is the *[Markdown Guide](https://www.markdownguide.org)*.
+See the section on [`code`](#code).
 
-[Optimizing: Fonts | Next.js](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts)
+This is a reference-style link: 
 
-[Using Fonts in Next.js (Google Fonts, Local Fonts, Tailwind CSS) - YouTube](https://www.youtube.com/watch?v=L8_98i_bMMA)
+Here's a footnote reference,[^1] and another.[^longnote]
+Here's another footnote reference that refers to the same footnote,[^1]
+Here's another footnote reference that refers to a different footnote,[^3]
+Here's another footnote that refers to the another long footnote,[^longnote]
+Here's another footnote that refers to the a different long footnote,[^longnote2]
 
-NOTES:
-LINKS Working
-Latex, iamges, lists, code, headings, table, spacing, notes or quotes doesn't work
-Some pages not showing at all (click-me)
+
+[^1]: Here is the footnote.
+
+[^longnote]: Here's one with multiple blocks.
+
+    Subsequent paragraphs are indented to show that they
+
+    they also like
+
+    something they also
+    so something
+
+[^longnote2]: Here's one with multiple blocks.
+
+    Subsequent paragraphs are indented to show that they
+    they also like
+    something they also
+    so something
+
+[^3]: Here is a different footnote.
+
+
+- [x] Latex
+- [x] Images
+- [x] Lists
+- [x] Code
+- [x] Headings
+- [x] Table
+- [x] Spacing
+- [x] Notes or Quotes (blockquote)
+- [x] Links
+- [x] line
+- [x] line break
+- [x] callout (made from mdx.tsx)
+- [x] inline code
+- [x] bold
+- [x] italic
+- [x] strikethrough
+- [x] horizontal rule
+- [x] task list
+- [x] emoji
+- [x] ProsCard (made from mdx.tsx)
+- [x] ConsCard (made from mdx.tsx)
+- [x] Rounded Image 
+- [x] CustomLink a (made from mdx.tsx)
+- [x] Footnote Reference with multiple blocks
+- [x] Footnote 
+
+
+
+
+

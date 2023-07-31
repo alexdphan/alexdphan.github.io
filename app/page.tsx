@@ -3,10 +3,11 @@
 import Link from "next/link";
 import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts, Post } from "contentlayer/generated";
-import { getMDXComponent } from "next-contentlayer/hooks";
+// import { getMDXComponent } from "next-contentlayer/hooks";
 import { Body } from '../components/Body';
 
 import ScrambleText from "components/ScrambleEffect";
+
 
 // postcard component
 // function PostCard(post: Post) {
@@ -60,9 +61,6 @@ function PostCard(post: Post) {
     </div>
   );
 }
-
-
-
 
 // shows the list of posts in postcards
 export default function Home() {

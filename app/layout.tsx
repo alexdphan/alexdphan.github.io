@@ -3,9 +3,11 @@ import '../styles/globals.css';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 
-import { JetBrains_Mono } from 'next/font/google';
 import { Roboto_Mono } from 'next/font/google';
-import ScrambleText from 'components/ScrambleEffect';
+
+// this is so latex works properly
+import 'katex/dist/katex.min.css'; // put the path to your katex.min.css file here
+
 
 const roboto = Roboto_Mono({
   display: 'swap',
