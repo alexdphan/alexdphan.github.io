@@ -14,7 +14,10 @@ import ScrambleText from "components/ScrambleEffect";
 
 export function Footer() {
   return (
-    <footer className="flex justify-end p-8 py-8 space-x-4">
+    <footer
+      style={{ marginTop: 'auto' }}
+      className="flex justify-end p-8 py-8 space-x-4"
+    >
       <Button
         variant="link"
         className="underline hover:underline-offset-4 text-muted-foreground"

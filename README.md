@@ -1,4 +1,6 @@
-# Next.js Contentlayer Example
+Go to [alexdphan.com](https://alexdphan.com) to see the live site :)
+
+<!-- # Next.js Contentlayer Example
 
 ## Demo
 
@@ -29,4 +31,4 @@ Run dev server:
 4. git remote add origin https://github.com/alexdphan/alexdphan.github.io.git
    git branch -M main
    git push -u origin main
-5. can clear history if you want (ask gpt)
+5. can clear history if you want (ask gpt) -->

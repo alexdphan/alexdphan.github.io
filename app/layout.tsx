@@ -12,11 +12,7 @@ const roboto = Roboto_Mono({
   subsets: ['latin'],
 });
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
@@ -26,16 +22,14 @@ export default function RootLayout({
         <title>Alex Phan's Website</title>
         <link rel="icon" type="image/x-icon" href="/favicon.png" />
       </head>
-      <body className="flex flex-col items-center justify-between">
-        <div className="w-full max-w-xl">
+      <body className="flex flex-col items-center justify-between min-h-screen">
+        <div className="flex flex-col w-full max-w-xl min-h-screen">
           <Header />
-          {/* Setting a fixed height here for now, since the footer keeps shifting. Also set a fixed height for header and footer as well */}
-          <main className="px-6" style={{ height: '500px' }}>
-            {children}
-          </main>
+          <main className="flex-grow px-6">{children}</main>
           <Footer />
         </div>
       </body>
     </html>
   );
 }
+
