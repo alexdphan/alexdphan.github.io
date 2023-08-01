@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import Link from 'next/link'
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import ScrambleText from "components/ScrambleEffect";
+import ScrambleText from 'components/ScrambleEffect';
 
 // function Icon() {
 //   return (
@@ -42,7 +42,7 @@ import ScrambleText from "components/ScrambleEffect";
 // added a fixed width and height to fill in space before text loads in from animation
 export function Header() {
   return (
-    <header className="flex justify-end p-8 pt-12 pb-0 space-x-3">
+    <header className="flex justify-end p-8 pt-12 pb-0 ">
       <Button variant="link" className="link-with-animation">
         <div style={{ width: '40px', height: '15px' }}>
           <ScrambleText text="Home" delay={3.25} />

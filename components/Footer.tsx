@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { CalendarIcon } from '@radix-ui/react-icons';
 
@@ -10,14 +10,13 @@ import {
   HoverCardTrigger,
 } from '@/components/ui/hover-card';
 
-import ScrambleText from "components/ScrambleEffect";
-
+import ScrambleText from 'components/ScrambleEffect';
 
 export function Footer() {
   return (
     <footer
       style={{ marginTop: 'auto' }}
-      className="flex justify-end p-8 py-12 space-x-3"
+      className="flex justify-end p-8 pt-0 pb-12 "
     >
       <Button
         variant="link"
@@ -59,4 +58,3 @@ export function Footer() {
     </footer>
   );
 }
-
