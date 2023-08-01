@@ -1,5 +1,31 @@
 import React from 'react';
 import ScrambleText from '../components/ScrambleEffect';
+import localFont from 'next/font/local';
+
+const patriot = localFont({
+  src: [
+    {
+      path: 'fonts/Patriot/Fonts/Patriot-Light.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: 'fonts/Patriot/Fonts/Patriot-Regular.woff2',
+      weight: '400',
+      style: 'italic',
+    },
+    {
+      path: 'fonts/Patriot/Fonts/Patriot-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: 'fonts/Patriot/Fonts/Patriot-UltraBold.woff2',
+      weight: '700',
+      style: 'italic',
+    },
+  ],
+});
 
 export function Body() {
   return (

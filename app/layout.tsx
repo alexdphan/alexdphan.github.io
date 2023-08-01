@@ -8,11 +8,12 @@ import { Roboto_Mono } from 'next/font/google';
 // this is so latex works properly
 import 'katex/dist/katex.min.css'; // put the path to your katex.min.css file here
 
-
 const roboto = Roboto_Mono({
   display: 'swap',
   subsets: ['latin'],
 });
+
+
 
 export default function RootLayout({ children }) {
   return (
@@ -21,7 +22,8 @@ export default function RootLayout({ children }) {
       className={`${roboto.className} flex flex-col min-h-screen`}
     >
       <head>
-        <title>Alex Phan's Website</title>
+        {/* Title of the page */}
+        <title>Alex Phan</title>
         <link rel="icon" type="image/x-icon" href="/favicon.png" />
       </head>
       <body className="flex flex-col items-center justify-between min-h-screen">
@@ -34,4 +36,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-
