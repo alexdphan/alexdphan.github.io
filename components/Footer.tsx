@@ -16,7 +16,7 @@ export function Footer() {
   return (
     <footer
       style={{ marginTop: 'auto' }}
-      className="flex justify-end p-8 pt-0 pb-12 "
+      className="flex justify-end p-8 pt-0 pb-24 "
     >
       <Button
         variant="link"
