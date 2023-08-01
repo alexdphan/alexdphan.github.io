@@ -39,7 +39,7 @@ function PostCard(post: Post) {
     <div className="mb-8 ">
       {/* This div will contain the title and date */}
       <div>
-        <h2 className="inline-block mb-2 text-xl font-semibold">
+        <h2 className="inline-block mb-2 text-lg font-semibold">
           <Link
             href={post.url}
             className="cursor-pointer "
