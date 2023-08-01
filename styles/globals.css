@@ -106,7 +106,7 @@ img {
 }
 
 ::selection {
-  background-color: #47a3f3; /* Changes the color of the text selection highlight to blue */
+  background-color: #393939; /* Changes the color of the text selection highlight to blue */
   color: #fefefe; /* Changes the color of the text within the selection to white */
 }
 
