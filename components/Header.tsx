@@ -43,21 +43,27 @@ import ScrambleText from 'components/ScrambleEffect';
 export function Header() {
   return (
     <header className="flex justify-end p-8 pt-6 pb-0 ">
-      <Button variant="link" className="link-with-animation">
-        <div style={{ width: '40px', height: '15px' }}>
-          <ScrambleText text="Home" delay={3.25} />
-        </div>
-      </Button>
-      <Button variant="link" className="link-with-animation">
-        <div style={{ width: '50px', height: '15px' }}>
-          <ScrambleText text="About" delay={3.25} />
-        </div>
-      </Button>
-      <Button variant="link" className="link-with-animation">
-        <div style={{ width: '30px', height: '15px' }}>
-          <ScrambleText text="Now" delay={3.25} />
-        </div>
-      </Button>
+      <Link href="/" passHref>
+        <Button variant="link" className="link-with-animation">
+          <div style={{ width: '40px', height: '15px' }}>
+            <ScrambleText text="Home" delay={3.25} />
+          </div>
+        </Button>
+      </Link>
+      <Link href="/about" passHref>
+        <Button variant="link" className="link-with-animation">
+          <div style={{ width: '50px', height: '15px' }}>
+            <ScrambleText text="About" delay={3.25} />
+          </div>
+        </Button>
+      </Link>
+      <Link href="/now" passHref>
+        <Button variant="link" className="link-with-animation">
+          <div style={{ width: '30px', height: '15px' }}>
+            <ScrambleText text="Now" delay={3.25} />
+          </div>
+        </Button>
+      </Link>
     </header>
   );
 }

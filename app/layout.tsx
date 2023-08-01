@@ -14,7 +14,6 @@ const roboto = Roboto_Mono({
 });
 
 
-
 export default function RootLayout({ children }) {
   return (
     <html
@@ -24,6 +23,7 @@ export default function RootLayout({ children }) {
       <head>
         {/* Title of the page */}
         <title>Alex Phan</title>
+        {/* Add icon here */}
         <link rel="icon" type="image/x-icon" href="/favicon.png" />
       </head>
       <body className="flex flex-col items-center justify-between min-h-screen">
