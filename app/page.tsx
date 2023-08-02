@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { compareDesc, format, parseISO } from "date-fns";
-import { allPosts, Post } from "contentlayer/generated";
+import Link from 'next/link';
+import { compareDesc, format, parseISO } from 'date-fns';
+import { allPosts, Post } from 'contentlayer/generated';
 // import { getMDXComponent } from "next-contentlayer/hooks";
 import { Body } from '../components/Body';
 
-import ScrambleText from "components/ScrambleEffect";
+import ScrambleText from 'components/ScrambleEffect';
 
 // postcard component
 // function PostCard(post: Post) {
@@ -40,14 +40,14 @@ function PostCard(post: Post) {
       {/* This div will contain the title and date */}
       <div>
         <h2 className="inline-block mb-2 text-lg font-semibold">
-          <Link
-            href={post.url}
-            className="cursor-pointer "
-            legacyBehavior
-          >
+          <Link href={post.url} className="cursor-pointer " legacyBehavior>
             <a className="link-with-animation ">
               <span className="cursor-pointer">
-                <ScrambleText text={post.title} delay={3.0} className="pb-0.5"/>
+                <ScrambleText
+                  text={post.title}
+                  delay={3.0}
+                  className="pb-0.5"
+                />
               </span>
             </a>
           </Link>
@@ -65,15 +65,13 @@ function PostCard(post: Post) {
   );
 }
 
-
-
 // shows the list of posts in postcards
 export default function Home() {
   const posts = allPosts.sort((a, b) =>
     compareDesc(new Date(a.date), new Date(b.date))
   );
 
-  // console.log(posts); 
+  // console.log(posts);
   // console.log(allPosts);
 
   return (

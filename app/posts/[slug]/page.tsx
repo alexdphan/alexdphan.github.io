@@ -3,7 +3,6 @@ import { allPosts } from 'contentlayer/generated';
 import { getMDXComponent } from 'next-contentlayer/hooks';
 import { Mdx } from 'components/mdx';
 
-
 export const generateStaticParams = async () =>
   allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
 
@@ -18,7 +17,7 @@ export const generateMetadata = ({ params }) => {
 //   const post = allPosts.find((post) => post._raw.flattenedPath === params.slug);
 
 //   const Content = getMDXComponent(post.body.code);
-  
+
 //   return (
 //     <article className="max-w-xl py-8 mx-auto">
 //       <div className="mb-8 text-center">

@@ -13,7 +13,6 @@ const roboto = Roboto_Mono({
   subsets: ['latin'],
 });
 
-
 export default function RootLayout({ children }) {
   return (
     <html
