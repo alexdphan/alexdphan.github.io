@@ -10,9 +10,33 @@ import remarkMdx from 'remark-mdx';
 
 // apply plugins to mdx
 
+const About = defineDocumentType(() => ({
+  name: 'About',
+  filePathPattern: `about/**/*.mdx`, // Matches MDX files under 'about' directory
+  contentType: 'mdx',
+  fields: {
+    title: {
+      type: 'string',
+      description: 'The title of the about page',
+      required: true,
+    },
+    description: {
+      // Added this
+      type: 'string',
+      description: 'The description of the about page',
+    },
+  },
+  computedFields: {
+    url: {
+      type: 'string',
+      resolve: (doc) => `/about/${doc._raw.flattenedPath}`,
+    },
+  },
+}));
+
 const Post = defineDocumentType(() => ({
   name: 'Post',
-  filePathPattern: `**/*.mdx`,
+  filePathPattern: `posts/**/*.mdx`, // Matches MDX files under 'posts' directory
   contentType: 'mdx',
   fields: {
     title: {
@@ -25,18 +49,25 @@ const Post = defineDocumentType(() => ({
       description: 'The date of the post',
       required: true,
     },
+    description: {
+      // Added this
+      type: 'string',
+      description: 'The description of the post',
+    },
   },
   computedFields: {
     url: {
       type: 'string',
-      resolve: (doc) => `/posts/${doc._raw.flattenedPath}`,
+      // resolve: (doc) => `/posts/${doc._raw.flattenedPath}`,
+      // posts are in home page
+      resolve: (doc) => `/${doc._raw.flattenedPath}`,
     },
   },
 }));
 
 export default makeSource({
-  contentDirPath: 'posts',
-  documentTypes: [Post],
+  contentDirPath: 'content',
+  documentTypes: [Post, About],
   mdx: {
     remarkPlugins: [remarkGfm, remarkMath, remarkBreaks, remarkMdx],
     rehypePlugins: [
@@ -64,7 +95,7 @@ export default makeSource({
       [
         rehypeAutolinkHeadings,
         {
-          // behavior: 'prepend', has it 
+          // behavior: 'prepend', has it
           properties: {
             className: ['subheading-anchor', 'anchor'],
             ariaLabel: 'Link to section',
