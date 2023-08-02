@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
         {/* Title of the page */}
         <title>Alex Phan</title>
         {/* Add icon here */}
-        <link rel="icon" type="image/x-icon" href="/favicon.png" />
+        <link rel="icon" type="image/x-icon" href="/images/AP.png" />
       </head>
       <body className="flex flex-col items-center justify-between min-h-screen">
         <div className="flex flex-col w-full max-w-xl min-h-screen">

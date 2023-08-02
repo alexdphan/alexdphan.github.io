@@ -57,13 +57,19 @@ export function Header() {
           </div>
         </Button>
       </Link>
-      <Link href="/projects" passHref>
+      <a
+        href="https://alexdphan.notion.site/Some-Cool-Builds-dc377eaf3c11421c89d9b65f46e4dc02?pvs=4"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {/* <Link href="/projects" passHref> */}
         <Button variant="link" className="link-with-animation">
           <div style={{ width: '70px', height: '15px' }}>
             <ScrambleText text="Projects" delay={3.25} />
           </div>
         </Button>
-      </Link>
+        {/* </Link> */}
+      </a>
     </header>
   );
 }

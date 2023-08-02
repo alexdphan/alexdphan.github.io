@@ -32,11 +32,19 @@ const About = () => {
         <h1>About</h1>
       </div>
       {/* <Mdx code={aboutData.body.code} /> */}
-      Welcome! Thanks for visiting. My name is Alex Phan.
+      Welcome! Thanks for visiting.
       <br />
-      I'm currently finishing my undergrad at George Mason Univeristy. Outlier
-      Fellow at Outlier DAO Practical Deep Learning… Past: Did some stuff at
-      Celestia and Alchemy Index Coop, Odyssey DAO
+      <br />
+      I'm currently finishing my undergrad at George Mason Univeristy.
+      <br />
+      <br />
+      I'm also an Outlier Fellow at Outlier DAO and spedning my free-time in
+      practical deep learning
+      <br />
+      <br />
+      In the past, I served as a Modular Fellow at Celestia, was the first
+      Analyst at Alchemy, worked in marketing at Index Coop, and ran as Admin
+      at Odyssey
     </article>
   );
 };
