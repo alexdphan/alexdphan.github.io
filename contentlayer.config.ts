@@ -34,9 +34,34 @@ const Post = defineDocumentType(() => ({
   },
 }));
 
+// Add a new document type for "About" pages
+const About = defineDocumentType(() => ({
+  name: 'About',
+  filePathPattern: `**/*.mdx`,
+  contentType: 'mdx',
+  fields: {
+    title: {
+      type: 'string',
+      description: 'The title of the page',
+      required: true,
+    },
+    date: {
+      type: 'date',
+      description: 'The date of the page',
+      required: false, // About pages might not have a date
+    },
+  },
+  computedFields: {
+    url: {
+      type: 'string',
+      resolve: (doc) => `/about/${doc._raw.flattenedPath}`,
+    },
+  },
+}));
+
 export default makeSource({
-  contentDirPath: 'posts',
-  documentTypes: [Post],
+  contentDirPath: '.', // Look in the current directory
+  documentTypes: [Post, About], // Include both Post and About document types
   mdx: {
     remarkPlugins: [remarkGfm, remarkMath, remarkBreaks, remarkMdx],
     rehypePlugins: [

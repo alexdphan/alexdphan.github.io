@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import ScrambleText from '../components/ScrambleEffect';
 import '../styles/globals.css';

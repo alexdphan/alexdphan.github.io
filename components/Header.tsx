@@ -57,10 +57,10 @@ export function Header() {
           </div>
         </Button>
       </Link>
-      <Link href="/now" passHref>
+      <Link href="/projects" passHref>
         <Button variant="link" className="link-with-animation">
-          <div style={{ width: '30px', height: '15px' }}>
-            <ScrambleText text="Now" delay={3.25} />
+          <div style={{ width: '70px', height: '15px' }}>
+            <ScrambleText text="Projects" delay={3.25} />
           </div>
         </Button>
       </Link>
