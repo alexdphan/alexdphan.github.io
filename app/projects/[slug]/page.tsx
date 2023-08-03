@@ -8,9 +8,7 @@ export const generateStaticParams = async () =>
 
 export const generateMetadata = ({ params }) => {
   const project = allProjects.find(
-    // (project) => project._raw.flattenedPath === `project/${params.slug}`
-
-    (project) => project._raw.flattenedPath === `/${params.slug}`
+    (project) => project._raw.flattenedPath === `projects/${params.slug}`
   );
   console.log('Project: ', project);
 
