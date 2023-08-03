@@ -7,11 +7,13 @@ export const generateStaticParams = async () =>
   allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
 
 export const generateMetadata = ({ params }) => {
-  // const post = allPosts.find((post) => post._raw.flattenedPath === `posts/${params.slug}`);
-  // changed the params.slug to `posts/${params.slug}` to match the flattenedPath
   const post = allPosts.find(
     (post) => post._raw.flattenedPath === `posts/${params.slug}`
   );
+
+  if (!post) {
+    throw new Error(`No post found for slug: ${params.slug}`);
+  }
 
   return { title: post.title };
 };
@@ -22,6 +24,10 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
   const post = allPosts.find(
     (post) => post._raw.flattenedPath === `posts/${params.slug}`
   );
+
+  if (!post) {
+    throw new Error(`No post found for slug: ${params.slug}`);
+  }
 
   return (
     <article className="max-w-xl py-8 mx-auto">
