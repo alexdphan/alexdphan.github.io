@@ -7,24 +7,26 @@ export const generateStaticParams = async () =>
   allProjects.map((project) => ({ slug: project._raw.flattenedPath }));
 
 export const generateMetadata = ({ params }) => {
+  // We need to prepend 'projects/' to the slug for the comparison
   const project = allProjects.find(
-    // (project) => project._raw.flattenedPath === `projects/${params.slug}`
-    (project) => project._raw.flattenedPath === `${params.slug}`
+    (project) => project._raw.flattenedPath === `projects/${params.slug}`
   );
+
+  if (!project) {
+    throw new Error(`No project found with slug: ${params.slug}`);
+  }
 
   return { title: project.title };
 };
 
 const ProjectLayout = ({ params }: { params: { slug: string } }) => {
-  // changed the params.slug to `posts/${params.slug}` to match the flattenedPath
-
-  // console.log('Parameters: ', params);
-  // console.log('All projects: ', allProjects);
-
-  const project = allProjects.find(
-    // (project) => project._raw.flattenedPath === `projects/${params.slug}`
-    (project) => project._raw.flattenedPath === `${params.slug}`
-  );
+  // Again, we need to prepend 'projects/' to the slug for the comparison
+  const project = allProjects.find((project) => {
+    console.log(
+      `Comparing slug 'projects/${params.slug}' with flattenedPath '${project._raw.flattenedPath}'`
+    );
+    return project._raw.flattenedPath === `projects/${params.slug}`;
+  });
 
   return (
     <article className="max-w-xl py-8 mx-auto">
