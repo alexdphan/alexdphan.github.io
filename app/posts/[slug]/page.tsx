@@ -5,11 +5,15 @@ import { Mdx } from 'components/mdx';
 
 // extracting the actual slug from the `flattenedPath`
 export const generateStaticParams = async () =>
+// The flattenedPath.split('/').pop() line of code splits the flattenedPath into an array of strings using the slash ('/') as a delimiter. 
+// It then uses the pop() method to extract the last string in the array, which should be the actual slug for the post or project.
   allPosts.map((post) => ({ slug: post._raw.flattenedPath.split('/').pop() }));
 
 export const generateMetadata = ({ params }) => {
   // decoding the slug from the URL params
   const decodedSlug = decodeURIComponent(params.slug);
+  // finding the post by the decoded slug, which is the actual slug
+  // we are finding the post by the flattenedPath and then splitting it by the slash and then popping the last item in the array
   const post = allPosts.find(
     (post) => post._raw.flattenedPath.split('/').pop() === decodedSlug
   );

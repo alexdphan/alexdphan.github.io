@@ -1,9 +1,10 @@
-"use client";
+'use client';
 
 import React, { useState, useEffect } from 'react';
 import { format } from 'date-fns';
 import { allAbouts } from 'contentlayer/generated';
 import { Mdx } from 'components/mdx';
+import { motion } from 'framer-motion';
 
 // As there's only one about page, you can directly get the about content
 const about = allAbouts[0];

@@ -5,6 +5,7 @@ import { compareDesc, format, parseISO } from 'date-fns';
 import { allProjects, Project } from 'contentlayer/generated';
 import { ReactElement } from 'react';
 
+
 const ProjectCard = (project: Project) => {
   // Define return type
   return (
