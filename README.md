@@ -1,5 +1,9 @@
 Go to [alexdphan.com](https://alexdphan.com) to see the live site :)
 
+Note: need to put '' around the YAML
+Also, need to put a space after the colon
+You can't have ' marks in the YAML
+
 <!-- # Next.js Contentlayer Example
 
 ## Demo
