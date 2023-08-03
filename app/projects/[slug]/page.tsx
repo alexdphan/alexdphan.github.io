@@ -7,23 +7,21 @@ export const generateStaticParams = async () =>
   allProjects.map((project) => ({ slug: project._raw.flattenedPath }));
 
 export const generateMetadata = ({ params }) => {
+  // Decode the slug before using it
+  const decodedSlug = decodeURIComponent(params.slug);
+
   const project = allProjects.find(
-    // (project) => project._raw.flattenedPath === `projects/${params.slug}`
-    (project) => project._raw.flattenedPath === `projects/${params.slug}`
+    (project) => project._raw.flattenedPath === `projects/${decodedSlug}`
   );
 
   return { title: project.title };
 };
-
 const ProjectLayout = ({ params }: { params: { slug: string } }) => {
-  // changed the params.slug to `posts/${params.slug}` to match the flattenedPath
-
-  // console.log('Parameters: ', params);
-  // console.log('All projects: ', allProjects);
+  // Decode the slug before using it to find a project
+  const decodedSlug = decodeURIComponent(params.slug);
 
   const project = allProjects.find(
-    // (project) => project._raw.flattenedPath === `projects/${params.slug}`
-    (project) => project._raw.flattenedPath === `projects/${params.slug}`
+    (project) => project._raw.flattenedPath === `projects/${decodedSlug}`
   );
 
   return (
