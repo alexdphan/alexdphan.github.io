@@ -3,12 +3,15 @@ import { allPosts } from 'contentlayer/generated';
 import { getMDXComponent } from 'next-contentlayer/hooks';
 import { Mdx } from 'components/mdx';
 
+// extracting the actual slug from the `flattenedPath`
 export const generateStaticParams = async () =>
-  allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
+  allPosts.map((post) => ({ slug: post._raw.flattenedPath.split('/').pop() }));
 
 export const generateMetadata = ({ params }) => {
+  // decoding the slug from the URL params
+  const decodedSlug = decodeURIComponent(params.slug);
   const post = allPosts.find(
-    (post) => post._raw.flattenedPath === `posts/${params.slug}`
+    (post) => post._raw.flattenedPath.split('/').pop() === decodedSlug
   );
 
   if (!post) {
@@ -19,10 +22,10 @@ export const generateMetadata = ({ params }) => {
 };
 
 const PostLayout = ({ params }: { params: { slug: string } }) => {
-  // const post = allPosts.find((post) => post._raw.flattenedPath === params.slug);
-  // changed the params.slug to `posts/${params.slug}` to match the flattenedPath
+  // decoding the slug from the URL params
+  const decodedSlug = decodeURIComponent(params.slug);
   const post = allPosts.find(
-    (post) => post._raw.flattenedPath === `posts/${params.slug}`
+    (post) => post._raw.flattenedPath.split('/').pop() === decodedSlug
   );
 
   if (!post) {
