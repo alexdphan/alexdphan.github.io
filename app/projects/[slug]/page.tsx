@@ -6,8 +6,8 @@ import { Mdx } from 'components/mdx';
 export const generateStaticParams = async () =>
   allProjects.map((project) => ({ slug: project._raw.flattenedPath }));
 
-export const generateMetadata = ({ params }) => {
 
+export const generateMetadata = ({ params }) => {
   const project = allProjects.find(
     (project) => project._raw.flattenedPath === `projects/${params.slug}`
   );
