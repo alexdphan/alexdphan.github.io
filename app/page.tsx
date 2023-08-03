@@ -11,11 +11,12 @@ import ScrambleText from 'components/ScrambleEffect';
 function PostCard(post: Post) {
   const formattedDate = format(parseISO(post.date), 'LLLL d, yyyy');
 
+
   return (
     <div className="mb-8 ">
       {/* This div will contain the title and date */}
       <div>
-        <h2 className="inline-block mb-2 text-lg font-semibold">
+        <h2 className="inline-block mb-1 text-xl font-semibold">
           <Link href={post.url} className="cursor-pointer " legacyBehavior>
             <a className="link-with-animation ">
               <span className="cursor-pointer">
@@ -28,11 +29,18 @@ function PostCard(post: Post) {
             </a>
           </Link>
         </h2>
+
         <time dateTime={post.date} className="block mb-2 text-xs text-gray-600">
           <span className="cursor-pointer">
             <ScrambleText text={formattedDate} delay={3.0} />
           </span>
         </time>
+
+        <div className="mb-4 text-sm">
+          <span className="cursor-pointer">
+            <ScrambleText text={post.description} delay={3.0} />
+          </span>
+        </div>
       </div>
       {/* <div className="text-sm">
         <Content /> This is the Actual content in the markdown files

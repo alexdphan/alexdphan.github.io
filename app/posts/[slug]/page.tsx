@@ -27,11 +27,16 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
   return (
     <article className="max-w-xl py-8 mx-auto">
       <div className="mb-8 text-start">
-        <time dateTime={post.date} className="mb-1 text-xs text-gray-600">
+        <time dateTime={post.date} className="text-xs text-gray-600 ">
           {format(parseISO(post.date), 'LLLL d, yyyy')}
         </time>
-        <h1>{post.title}</h1>
+        <h1 className="mt-2 mb-1 text-xl font-semibold">{post.title}</h1>
+        {/* <div className="mb-4 text-sm"> */}
+        <span className="">{post.description}</span>
+        {/* </div> */}
       </div>
+      <hr />
+
       <Mdx code={post.body.code} />
     </article>
   );

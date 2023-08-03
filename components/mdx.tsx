@@ -22,9 +22,18 @@ const CustomLink = (props) => {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 };
 
+// function RoundedImage(props) {
+//   return <Image alt={props.alt} className="rounded-lg " {...props} />;
+// }
+
 function RoundedImage(props) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />;
+  return (
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <Image alt={props.alt} className="rounded-lg " {...props} />
+    </div>
+  );
 }
+
 
 function Callout(props) {
   return (

@@ -134,6 +134,10 @@ html {
   @apply transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em]; /* Adds a transition to all properties, applies decoration styles, adds an offset to the underline, and applies a specific decoration style */
 }
 
+.prose a:hover {
+  color: #d8b281;
+}
+
 .prose .anchor:after {
   @apply text-neutral-300 dark:text-neutral-700; /* Applies color styles to the content after the anchor tags */
   content: '#'; /* Adds a '#' after the content of the anchor tags */

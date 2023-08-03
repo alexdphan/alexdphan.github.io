@@ -65,9 +65,38 @@ const Post = defineDocumentType(() => ({
   },
 }));
 
+const Project = defineDocumentType(() => ({
+  name: 'Project',
+  filePathPattern: `projects/**/*.mdx`, // Matches MDX files under 'posts' directory
+  contentType: 'mdx',
+  fields: {
+    title: {
+      type: 'string',
+      description: 'The title of the project',
+      required: true,
+    },
+    description: {
+      // Added this
+      type: 'string',
+      description: 'The description of the project',
+    },
+    count: {
+      type: 'number',
+      default: 0,
+    },
+  },
+  computedFields: {
+    url: {
+      type: 'string',
+      // resolve: (doc) => `/projects/${doc._raw.flattenedPath}`,
+      resolve: (doc) => `/${doc._raw.flattenedPath}`,
+    },
+  },
+}));
+
 export default makeSource({
   contentDirPath: 'content',
-  documentTypes: [Post, About],
+  documentTypes: [Post, About, Project],
   mdx: {
     remarkPlugins: [remarkGfm, remarkMath, remarkBreaks, remarkMdx],
     rehypePlugins: [
