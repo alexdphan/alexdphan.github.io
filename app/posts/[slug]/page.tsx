@@ -23,7 +23,6 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
     (post) => post._raw.flattenedPath === `posts/${params.slug}`
   );
 
-  
   return (
     <article className="max-w-xl py-8 mx-auto">
       <div className="mb-8 text-start">
