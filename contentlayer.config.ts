@@ -89,7 +89,7 @@ const Project = defineDocumentType(() => ({
     url: {
       type: 'string',
       // resolve: (doc) => `/projects/${doc._raw.flattenedPath}`,
-      resolve: (doc) => `/${doc._raw.flattenedPath}`,
+      resolve: (doc) => `projects/${doc._raw.flattenedPath}`,
     },
   },
 }));
