@@ -3,8 +3,10 @@
 import Link from 'next/link';
 import { compareDesc, format, parseISO } from 'date-fns';
 import { allProjects, Project } from 'contentlayer/generated';
+import { ReactElement } from 'react';
 
-function ProjectCard(project: Project) {
+function ProjectCard(project: Project): ReactElement {
+  // Define return type
   return (
     <div className="mb-8 ">
       <div>
@@ -25,11 +27,11 @@ function ProjectCard(project: Project) {
 }
 
 // shows the list of projects in projectcards
-export default function Home() {
+export default function Home(): ReactElement {
+  // Define return type
 
-// sort projects by count in order count descending
-const projects = allProjects.sort((a, b) => (b.count || 0) - (a.count || 0));
-
+  // sort projects by count in order count descending
+  const projects = allProjects;
 
   return (
     <article className="max-w-xl py-8 mx-auto">
