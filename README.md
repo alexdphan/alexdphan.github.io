@@ -4,6 +4,8 @@ Note: need to put '' around the YAML
 Also, need to put a space after the colon
 You can't have ' marks in the YAML
 
+In most scenarios, you can avoid URL encoding if you ensure that your slugs don't contain any characters that have special meanings in a URL context. These characters include #, ?, &, %, /, :, ;, =, @, +, $, ,, , ", <, >, {, }, |, \, ^, ~, [, ], `, and '.
+
 <!-- # Next.js Contentlayer Example
 
 ## Demo
