@@ -7,30 +7,27 @@ export const generateStaticParams = async () =>
   allProjects.map((project) => ({ slug: project._raw.flattenedPath }));
 
 export const generateMetadata = ({ params }) => {
-  // We need to decode the URL-encoded slug
-  const decodedSlug = decodeURIComponent(params.slug);
+  console.log(`params.slug: ${params.slug}`);
 
-  // We need to prepend 'projects/' to the slug for the comparison
   const project = allProjects.find(
-    (project) => project._raw.flattenedPath === `projects/${decodedSlug}`
+    (project) => project._raw.flattenedPath === params.slug
   );
 
   if (!project) {
-    throw new Error(`No project found with slug: ${decodedSlug}`);
+    throw new Error(`No project found with slug: ${params.slug}`);
   }
 
   return { title: project.title };
 };
 
 const ProjectLayout = ({ params }: { params: { slug: string } }) => {
-  // Again, we need to decode the URL-encoded slug and prepend 'projects/' to the slug for the comparison
-  const decodedSlug = decodeURIComponent(params.slug);
+  console.log(`params.slug: ${params.slug}`);
 
   const project = allProjects.find((project) => {
     console.log(
-      `Comparing slug 'projects/${decodedSlug}' with flattenedPath '${project._raw.flattenedPath}'`
+      `Comparing slug '${params.slug}' with flattenedPath '${project._raw.flattenedPath}'`
     );
-    return project._raw.flattenedPath === `projects/${decodedSlug}`;
+    return project._raw.flattenedPath === params.slug;
   });
 
   return (
