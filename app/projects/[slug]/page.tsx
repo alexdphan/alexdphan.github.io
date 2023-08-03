@@ -4,24 +4,22 @@ import { getMDXComponent } from 'next-contentlayer/hooks';
 import { Mdx } from 'components/mdx';
 
 export const generateStaticParams = async () =>
-  allProjects.map((project) => ({ slug: project._raw.flattenedPath }));
+  allProjects.map((project) => ({
+    slug: project._raw.flattenedPath.split('/').pop(),
+  }));
 
 export const generateMetadata = ({ params }) => {
-  // Decode the slug before using it
   const decodedSlug = decodeURIComponent(params.slug);
-
   const project = allProjects.find(
-    (project) => project._raw.flattenedPath === `projects/${decodedSlug}`
+    (project) => project._raw.flattenedPath.split('/').pop() === decodedSlug
   );
-
   return { title: project.title };
 };
-const ProjectLayout = ({ params }: { params: { slug: string } }) => {
-  // Decode the slug before using it to find a project
-  const decodedSlug = decodeURIComponent(params.slug);
 
+const ProjectLayout = ({ params }: { params: { slug: string } }) => {
+  const decodedSlug = decodeURIComponent(params.slug);
   const project = allProjects.find(
-    (project) => project._raw.flattenedPath === `projects/${decodedSlug}`
+    (project) => project._raw.flattenedPath.split('/').pop() === decodedSlug
   );
 
   return (
