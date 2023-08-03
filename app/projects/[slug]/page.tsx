@@ -40,3 +40,6 @@ const ProjectLayout = ({ params }: { params: { slug: string } }) => {
 };
 
 export default ProjectLayout;
+
+// problem here is that I need to get the project data from the flattenedPath
+// I need to encode and decode the flattenedPath
