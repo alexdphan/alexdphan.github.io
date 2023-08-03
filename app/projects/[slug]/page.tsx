@@ -7,32 +7,23 @@ export const generateStaticParams = async () =>
   allProjects.map((project) => ({ slug: project._raw.flattenedPath }));
 
 export const generateMetadata = ({ params }) => {
-  console.log('Searching for slug:', params.slug);
-
-  // const project = allProjects.find((project) => {
-  //   console.log('Comparing slugs:', params.slug, project._raw.flattenedPath);
-  //   return project._raw.flattenedPath === params.slug;
-  // });
-
   const project = allProjects.find(
-    (project) => `projects/${params.slug}` === project._raw.flattenedPath
+    // (project) => project._raw.flattenedPath === `projects/${params.slug}`
+    (project) => project._raw.flattenedPath === `projects/${params.slug}`
   );
-
-  if (!project) {
-    throw new Error(`No project found with slug: ${params.slug}`);
-  }
 
   return { title: project.title };
 };
 
-const ProjectLayout = ({ params }) => {
-  allProjects.forEach((project) => console.log(project._raw.flattenedPath));
+const ProjectLayout = ({ params }: { params: { slug: string } }) => {
+  // changed the params.slug to `posts/${params.slug}` to match the flattenedPath
 
-  // const project = allProjects.find(
-  //   (project) => project._raw.flattenedPath === params.slug
-  // );
+  // console.log('Parameters: ', params);
+  // console.log('All projects: ', allProjects);
+
   const project = allProjects.find(
-    (project) => `projects/${params.slug}` === project._raw.flattenedPath
+    // (project) => project._raw.flattenedPath === `projects/${params.slug}`
+    (project) => project._raw.flattenedPath === `projects/${params.slug}`
   );
 
   return (
