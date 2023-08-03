@@ -82,7 +82,8 @@ const Project = defineDocumentType(() => ({
     },
     count: {
       type: 'number',
-      default: 0,
+      // default: 0,
+      required: true,
     },
   },
   computedFields: {
