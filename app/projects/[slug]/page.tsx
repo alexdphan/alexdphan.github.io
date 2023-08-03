@@ -6,17 +6,23 @@ import { Mdx } from 'components/mdx';
 export const generateStaticParams = async () =>
   allProjects.map((project) => ({ slug: project._raw.flattenedPath }));
 
-
 export const generateMetadata = ({ params }) => {
   const project = allProjects.find(
-    (project) => project._raw.flattenedPath === `projects/${params.slug}`
+    // (project) => project._raw.flattenedPath === `project/${params.slug}`
+
+    (project) => project._raw.flattenedPath === `/${params.slug}`
   );
+  console.log('Project: ', project);
 
   return { title: project.title };
 };
 
 const ProjectLayout = ({ params }: { params: { slug: string } }) => {
   // changed the params.slug to `posts/${params.slug}` to match the flattenedPath
+
+  // console.log('Parameters: ', params);
+  // console.log('All projects: ', allProjects);
+
   const project = allProjects.find(
     (project) => project._raw.flattenedPath === `projects/${params.slug}`
   );
