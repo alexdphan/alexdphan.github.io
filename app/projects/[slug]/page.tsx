@@ -7,10 +7,15 @@ export const generateStaticParams = async () =>
   allProjects.map((project) => ({ slug: project._raw.flattenedPath }));
 
 export const generateMetadata = ({ params }) => {
-  console.log(`params.slug: ${params.slug}`);
+  console.log('Searching for slug:', params.slug);
+
+  // const project = allProjects.find((project) => {
+  //   console.log('Comparing slugs:', params.slug, project._raw.flattenedPath);
+  //   return project._raw.flattenedPath === params.slug;
+  // });
 
   const project = allProjects.find(
-    (project) => project._raw.flattenedPath === params.slug
+    (project) => `projects/${params.slug}` === project._raw.flattenedPath
   );
 
   if (!project) {
@@ -20,15 +25,15 @@ export const generateMetadata = ({ params }) => {
   return { title: project.title };
 };
 
-const ProjectLayout = ({ params }: { params: { slug: string } }) => {
-  console.log(`params.slug: ${params.slug}`);
+const ProjectLayout = ({ params }) => {
+  allProjects.forEach((project) => console.log(project._raw.flattenedPath));
 
-  const project = allProjects.find((project) => {
-    console.log(
-      `Comparing slug '${params.slug}' with flattenedPath '${project._raw.flattenedPath}'`
-    );
-    return project._raw.flattenedPath === params.slug;
-  });
+  // const project = allProjects.find(
+  //   (project) => project._raw.flattenedPath === params.slug
+  // );
+  const project = allProjects.find(
+    (project) => `projects/${params.slug}` === project._raw.flattenedPath
+  );
 
   return (
     <article className="max-w-xl py-8 mx-auto">
