@@ -60,7 +60,7 @@ const Post = defineDocumentType(() => ({
       type: 'string',
       // resolve: (doc) => `/posts/${doc._raw.flattenedPath}`,
       // posts are in home page
-      resolve: (doc) => `/${doc._raw.flattenedPath}`,
+      resolve: (doc) => `/posts/${doc._raw.flattenedPath}`,
     },
   },
 }));
@@ -89,7 +89,7 @@ const Project = defineDocumentType(() => ({
     url: {
       type: 'string',
       // resolve: (doc) => `/projects/${doc._raw.flattenedPath}`,
-      resolve: (doc) => `/${doc._raw.flattenedPath}`,
+      resolve: (doc) => `/projects/${doc._raw.flattenedPath}`,
     },
   },
 }));
