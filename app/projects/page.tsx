@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { compareDesc, format, parseISO } from 'date-fns';
 import { allProjects, Project } from 'contentlayer/generated';
 import { ReactElement } from 'react';
-
+import Layout from 'components/Layout'; // Import Layout
 
 const ProjectCard = (project: Project) => {
   // Define return type
@@ -35,19 +35,23 @@ export default function Home(): ReactElement {
   const projects = allProjects.sort((a, b) => (b.count || 0) - (a.count || 0));
 
   return (
-    <article className="max-w-xl py-8 mx-auto">
-      <div className="mb-8 text-start">
-        <p className="text-xs text-gray-600 ">Highlighting some cool builds:</p>
-        <h1 className="mt-2 mb-1 text-xl font-semibold">Projects</h1>
-        <p className="">
-          Spending the moments I can building what I find useful
-        </p>
-      </div>
-      <hr />
-      <br />
-      {projects.map((project, idx) => (
-        <ProjectCard key={idx} {...project} />
-      ))}
-    </article>
+    <Layout>
+      <article className="max-w-xl py-8 mx-auto">
+        <div className="mb-8 text-start">
+          <p className="text-xs text-gray-600 ">
+            Highlighting some cool builds:
+          </p>
+          <h1 className="mt-2 mb-1 text-xl font-semibold">Projects</h1>
+          <p className="">
+            Spending the moments I can building what I find useful
+          </p>
+        </div>
+        <hr />
+        <br />
+        {projects.map((project, idx) => (
+          <ProjectCard key={idx} {...project} />
+        ))}
+      </article>
+    </Layout>
   );
 }
