@@ -129,11 +129,10 @@ html {
   @apply visible; /* Makes the anchor tags visible when hovered */
 }
 
-// change mdx paragraph text size to small instead of base (16px)
+/* change mdx paragraph text size to small instead of base (16px) */
 .prose p {
   @apply text-sm;
 }
-
 
 /* Styles for all anchor tags within the .prose class */
 .prose a {
