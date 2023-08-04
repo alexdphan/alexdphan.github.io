@@ -1,8 +1,7 @@
-// Layout.js
 // page transitions
 import { motion } from 'framer-motion';
 
-const Layout = ({ children }) => (
+const Transition = ({ children }) => (
   <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
@@ -13,4 +12,4 @@ const Layout = ({ children }) => (
   </motion.div>
 );
 
-export default Layout;
+export default Transition;

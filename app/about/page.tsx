@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { format } from 'date-fns';
 import { allAbouts } from 'contentlayer/generated';
 import { Mdx } from 'components/mdx';
-import Layout from 'components/Layout'; // Import Layout
+import Layout from 'components/Transition'; // Import Layout
 
 // As there's only one about page, you can directly get the about content
 const about = allAbouts[0];
