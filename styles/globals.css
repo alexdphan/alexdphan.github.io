@@ -129,6 +129,12 @@ html {
   @apply visible; /* Makes the anchor tags visible when hovered */
 }
 
+// change mdx paragraph text size to small instead of base (16px)
+.prose p {
+  @apply text-sm;
+}
+
+
 /* Styles for all anchor tags within the .prose class */
 .prose a {
   @apply transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em]; /* Adds a transition to all properties, applies decoration styles, adds an offset to the underline, and applies a specific decoration style */
