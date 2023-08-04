@@ -181,6 +181,10 @@ html {
   margin-bottom: 1.25em !important; /* Adds a bottom margin */
 }
 
+.prose ul li, .prose ol li {
+  @apply text-sm;
+}
+
 /* Styles for code with a certain language class and preformatted text with a certain language class */
 code[class*='language-'],
 pre[class*='language-'] {
