@@ -8,8 +8,6 @@ import { Body } from '../components/Body';
 
 import ScrambleText from 'components/ScrambleEffect';
 
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
 
 function PostCard(post: Post) {
   const formattedDate = format(parseISO(post.date), 'LLLL d, yyyy');
