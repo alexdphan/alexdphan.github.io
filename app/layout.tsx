@@ -4,6 +4,7 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 
 import { Roboto_Mono } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
 
 // this is so latex works properly
 import 'katex/dist/katex.min.css'; // put the path to your katex.min.css file here
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
         <div className="flex flex-col w-full max-w-xl min-h-screen">
           <Header />
           <main className="flex-grow px-6">{children}</main>
+          <Analytics />
           <Footer />
         </div>
       </body>
