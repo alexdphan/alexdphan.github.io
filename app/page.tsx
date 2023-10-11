@@ -58,9 +58,10 @@ export default function Home() {
   return (
     <div className="max-w-xl py-8 mx-auto">
       <Body />
-      {posts.map((post, idx) => (
+      {/* Removed until I have a blog post to share */}
+      {/* {posts.map((post, idx) => (
         <PostCard key={idx} {...post} />
-      ))}
+      ))} */}
     </div>
   );
 }
