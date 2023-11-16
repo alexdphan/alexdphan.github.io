@@ -34,9 +34,10 @@ export function Body() {
     setGreeting(greetingVariations[greetingIndex]);
   };
 
-  useEffect(() => {
-    updateTexts();
-  });
+   useEffect(() => {
+     updateTexts();
+   }, []);
+  
   return (
     <div className="flex flex-col justify-start max-w-xl py-2 mx-auto">
       <ScrambleText
