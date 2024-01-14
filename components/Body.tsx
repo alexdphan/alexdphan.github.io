@@ -6,11 +6,11 @@ import '../styles/globals.css';
 
 const greetingVariations = [
   "Hey, glad you're here",
-  'Hi there, nice to see you!',
-  'Greetings, happy you made it!',
-  'Hey, welcome to the space!',
-  'Hey there, awesome to have you around!',
-  "What's up? Great to see you here!",
+  'Hi there, nice to see you',
+  'Greetings, happy you made it',
+  'Hey, welcome to the space',
+  'Awesome to have you around',
+  'Great to see you here',
 ];
 
 const textVariations = [
@@ -34,28 +34,30 @@ export function Body() {
     setGreeting(greetingVariations[greetingIndex]);
   };
 
-   useEffect(() => {
-     updateTexts();
-   }, []);
-  
+  useEffect(() => {
+    updateTexts();
+  }, []);
+
   return (
-    <div className="flex flex-col justify-start max-w-xl py-2 mx-auto">
-      <ScrambleText
-        text="AP"
-        className="flex justify-start mb-2 text-4xl font-bold text-center patriot-bold"
-      />
-      <ScrambleText
-        text={greeting}
-        className="mb-4 text-base font-bold leading-relaxed tracking-wider text-foreground "
-        delay={1.0}
-      />
-      <div style={{ height: 130 }}>
+    <div className="flex items-center justify-center pt-56">
+      <div className="flex flex-col items-center py-2 mx-auto">
         <ScrambleText
-          text={selectedText}
-          className="mb-8 text-sm font-normal leading-relaxed"
-          delay={3.0}
+          text="AP"
+          className="mb-2 text-4xl font-bold text-center patriot-bold"
+        />
+        <ScrambleText
+          text={greeting}
+          className="mb-4 text-base font-bold leading-relaxed tracking-wider text-center text-foreground"
+          delay={1.0}
         />
       </div>
+      {/* <div style={{ height: 130 }}>
+    <ScrambleText
+      text={selectedText}
+      className="mb-8 text-sm font-normal leading-relaxed text-left" // Adjusted class here
+      delay={3.0}
+    />
+  </div> */}
     </div>
   );
 }
