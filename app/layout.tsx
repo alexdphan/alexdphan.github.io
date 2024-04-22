@@ -6,6 +6,7 @@ import { Footer } from '../components/Footer';
 import { Roboto_Mono } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import Script from 'next/script';
+import localFont from 'next/font/local';
 
 // this is so latex works properly
 import 'katex/dist/katex.min.css'; // put the path to your katex.min.css file here
@@ -13,6 +14,7 @@ import 'katex/dist/katex.min.css'; // put the path to your katex.min.css file he
 const roboto = Roboto_Mono({
   display: 'swap',
   subsets: ['latin'],
+  weight: ['400'], // Adjust this value as needed, e.g., '100' for an even thinner appearance
 });
 
 export default function RootLayout({ children }) {
@@ -20,6 +22,7 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       className={`${roboto.className} flex flex-col min-h-screen`}
+      // className="commit-mono"
     >
       <head>
         {/* Title of the page */}
@@ -27,7 +30,7 @@ export default function RootLayout({ children }) {
         {/* Add icon here */}
         <link rel="icon" type="image/x-icon" href="/images/AP.png" />
       </head>
-      <body className="flex flex-col items-center justify-between min-h-screen">
+      <body className="flex flex-col items-center justify-between min-h-screen text-foreground">
         <div className="flex flex-col w-full max-w-xl min-h-screen">
           <Header />
           <main className="flex-grow px-6">{children}</main>

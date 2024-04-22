@@ -1,42 +1,80 @@
-'use client';
+// app/about/page.tsx
+import { getAbout } from './utils';
+import { baseUrl } from '../sitemap';
+import { notFound } from 'next/navigation';
+import AboutContent from '../../components/AboutContent';
+import { CustomMDX } from '../../components/mdx';
+import { AboutPresent } from '../../components/AboutPresent';
 
-import React, { useState, useEffect } from 'react';
-import { format } from 'date-fns';
-import { allAbouts } from 'contentlayer/generated';
-import { Mdx } from 'components/mdx';
-import Layout from 'components/Transition'; // Import Layout
+export async function generateStaticParams() {
+  const aboutFetch = await getAbout();
 
-// As there's only one about page, you can directly get the about content
-const about = allAbouts[0];
+  return aboutFetch.map((about) => ({
+    slug: about.slug,
+  }));
+}
 
-const AboutPage = () => {
-  const [currentDate, setCurrentDate] = useState(new Date());
+export async function generateMetadata({ params }) {
+  const aboutFetch = await getAbout();
+  let about = aboutFetch.find((aboutFetch) => aboutFetch.slug === params.slug);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentDate(new Date());
-    }, 1000);
+  if (!about) {
+    return;
+  }
 
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
+  let { title, description } = about.metadata;
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      url: `${baseUrl}/about/${about.slug}`,
+    },
+  };
+}
+
+export default async function About({ params }) {
+  const aboutFetch = await getAbout();
+  const about = aboutFetch.find((aboutFetch) => aboutFetch.slug === 'about');
+
+  if (!about) {
+    notFound();
+  }
 
   return (
-    <Layout>
-      <article className="max-w-xl py-8 mx-auto">
-        <div className="mb-8 text-start">
-          <time className="text-xs text-gray-600 ">
-            {format(currentDate, 'yyyy-MM-dd HH:mm:ss')}
-          </time>
-          <h1 className="mt-2 mb-1 text-xl font-semibold">{about.title}</h1>
-          <p>{about.description}</p>
-        </div>
-        <hr />
-        <Mdx code={about.body.code} />
-      </article>
-    </Layout>
+    <section>
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
+            headline: about.metadata.title,
+            description: about.metadata.description,
+            // datePublished: project.metadata.publishedAt,
+            // dateModified: project.metadata.publishedAt,
+            // description: project.metadata.summary,
+            // image: project.metadata.image
+            // ? `${baseUrl}${project.metadata.image}`
+            // : `/og?title=${encodeURIComponent(project.metadata.title)}`,
+            url: `${baseUrl}/about/${about.slug}`,
+            author: {
+              '@type': 'Person',
+              name: 'My Portfolio',
+            },
+          }),
+        }}
+      />
+      <div className="">
+        <article className="max-w-xl pt-8 mx-auto text-sm loading-element ">
+          <AboutPresent />
+          <hr className="my-4" />
+          <CustomMDX source={about.content} />
+        </article>
+      </div>
+    </section>
   );
-};
-
-export default AboutPage;
+}

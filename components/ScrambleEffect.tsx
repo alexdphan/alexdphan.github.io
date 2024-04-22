@@ -26,8 +26,9 @@ class TextScramble {
       for (let i = 0; i < length; i++) {
         const from = oldText[i] || '';
         const to = newText[i] || '';
-        const start = Math.floor(Math.random() * 40);
-        const end = start + Math.floor(Math.random() * 40);
+        // Adjust these values to make the effect faster
+        const start = Math.floor(Math.random() * 15); // Reduced from 40 to 15
+        const end = start + Math.floor(Math.random() * 15); // Reduced from 40 to 15
         this.queue.push({ from, to, start, end });
       }
       this.update();
