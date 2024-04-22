@@ -3,7 +3,6 @@ import { CustomMDX } from '../../../components/mdx';
 // import { formatDate, getProjects } from '../utils';
 import { getProjects } from '../utils';
 import { baseUrl } from '../../sitemap';
-import Transition from '../../../components/Transition';
 
 export async function generateStaticParams() {
   let projects = getProjects();
