@@ -8,6 +8,27 @@ import { Analytics } from '@vercel/analytics/react';
 import Script from 'next/script';
 import localFont from 'next/font/local';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Alex Phan',
+  description: 'Alex Phan',
+  keywords: [
+    'Alex',
+    'Phan',
+    'Alex Phan',
+    'alex',
+    'phan',
+    'alexphan',
+    'alexdphan',
+    'alexdphan.com',
+    'alexdphan.com/blog',
+    'alexdphan.com/projects',
+    'alexdphan.github.io',
+  ],
+  creator: 'Alex Phan',
+};
+
 // this is so latex works properly
 import 'katex/dist/katex.min.css'; // put the path to your katex.min.css file here
 
