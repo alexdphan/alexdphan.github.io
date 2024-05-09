@@ -4,6 +4,7 @@ import { CustomMDX } from '../../../components/mdx';
 import { getProjects } from '../utils';
 import { baseUrl } from '../../sitemap';
 
+
 export async function generateStaticParams() {
   let projects = getProjects();
 

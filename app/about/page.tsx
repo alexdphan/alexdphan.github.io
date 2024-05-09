@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import AboutContent from '../../components/AboutContent';
 import { CustomMDX } from '../../components/mdx';
 import { AboutPresent } from '../../components/AboutPresent';
-
+import { Footer } from '../../components/Footer';
 export async function generateStaticParams() {
   const aboutFetch = await getAbout();
 
@@ -75,6 +75,7 @@ export default async function About({ params }) {
           <CustomMDX source={about.content} />
         </article>
       </div>
+      <Footer />
     </section>
   );
 }

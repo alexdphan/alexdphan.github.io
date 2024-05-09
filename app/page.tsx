@@ -1,12 +1,14 @@
 'use client';
 
 import { Body } from '../components/HomeBody';
+import { Footer } from '../components/Footer';
+import { Header } from '../components/Header';
 
 import ScrambleText from 'components/ScrambleEffect';
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center mt-52 sm:mt-64 h-3/4">
+    <div className="flex flex-col items-center pt-72">
       <Body />
     </div>
   );

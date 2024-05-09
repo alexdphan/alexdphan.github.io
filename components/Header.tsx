@@ -8,7 +8,7 @@ import ScrambleText from 'components/ScrambleEffect';
 // added a fixed width and height to fill in space before text loads in from animation
 export function Header() {
   return (
-    <header className="flex justify-center h-full py-8 pt-6 pb-0">
+    <header className="flex justify-center py-8 pt-6 pb-0">
       <Link href="/" passHref>
         <motion.div
           initial={{ opacity: 0 }}

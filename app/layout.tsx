@@ -50,13 +50,11 @@ export default function RootLayout({ children }) {
         {/* Add icon here */}
         <link rel="icon" type="image/x-icon" href="/images/AP.png" />
       </head>
-      <body className="flex flex-col items-center justify-between min-h-screen text-foreground">
-        <div className="flex flex-col w-full max-w-xl min-h-screen">
-          <Header />
-          <main className="flex-grow px-6">{children}</main>
-          <Analytics />
-          <Footer />
-        </div>
+      <body className="flex flex-col min-h-screen text-foreground">
+        <Header />
+        <main className="flex-grow px-6">{children}</main>
+        {/* <Footer /> */}
+        <Analytics />
       </body>
     </html>
   );

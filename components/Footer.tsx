@@ -12,10 +12,7 @@ import { motion } from 'framer-motion';
 
 export function Footer() {
   return (
-    <footer
-      style={{ marginTop: 'auto' }}
-      className="flex justify-center py-8 pt-0 "
-    >
+    <footer style={{ marginTop: 'auto' }} className="flex py-8 pt-8">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -26,7 +23,7 @@ export function Footer() {
             variant="link"
             className="text-muted-foreground link-with-animation"
           >
-            <span className="text-secondary">Twitter</span>
+            <span className="text-secondary">X</span>
           </Button>
         </a>
         <a href="https://github.com/alexdphan">
