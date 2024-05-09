@@ -6,7 +6,7 @@ import ScrambleText from 'components/ScrambleEffect';
 
 export default function Home() {
   return (
-    <div className="max-w-xl py-8 mx-auto">
+    <div className="flex items-center justify-center mt-52 sm:mt-64 h-3/4">
       <Body />
     </div>
   );

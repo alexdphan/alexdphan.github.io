@@ -29,7 +29,6 @@ export function Body() {
   const updateTexts = () => {
     const textIndex = Math.floor(Math.random() * textVariations.length);
     setSelectedText(textVariations[textIndex]);
-
     const greetingIndex = Math.floor(Math.random() * greetingVariations.length);
     setGreeting(greetingVariations[greetingIndex]);
   };
@@ -39,11 +38,11 @@ export function Body() {
   }, []);
 
   return (
-    <div className="flex justify-center px-4 pt-56 text-center">
-      <div className="flex flex-col justify-center py-2 ">
+    <div className="flex items-center justify-center ">
+      <div className="text-center">
         <ScrambleText
           text="AP"
-          className="mb-2 text-3xl font-bold text-center patriot-bold"
+          className="mb-2 text-3xl font-bold patriot-bold"
         />
         <ScrambleText
           text={greeting}
@@ -51,13 +50,6 @@ export function Body() {
           delay={1.0}
         />
       </div>
-      {/* <div style={{ height: 130 }}>
-    <ScrambleText
-      text={selectedText}
-      className="mb-8 text-sm font-normal leading-relaxed text-left" // Adjusted class here
-      delay={3.0}
-    />
-  </div> */}
     </div>
   );
 }

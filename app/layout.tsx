@@ -43,7 +43,6 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       className={`${roboto.className} flex flex-col min-h-screen`}
-      // className="commit-mono"
     >
       <head>
         {/* Title of the page */}

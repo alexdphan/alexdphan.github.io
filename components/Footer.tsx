@@ -14,7 +14,7 @@ export function Footer() {
   return (
     <footer
       style={{ marginTop: 'auto' }}
-      className="flex justify-center h-full py-8 pt-0 pb-24 "
+      className="flex justify-center py-8 pt-0 "
     >
       <motion.div
         initial={{ opacity: 0 }}
