@@ -75,7 +75,9 @@ export default async function About({ params }) {
           <CustomMDX source={about.content} />
         </article>
       </div>
-      <Footer />
+      <div className="flex items-center justify-center">
+        <Footer />
+      </div>
     </section>
   );
 }
