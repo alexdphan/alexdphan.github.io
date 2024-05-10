@@ -4,7 +4,6 @@ import { CustomMDX } from '../../../components/mdx';
 import { getProjects } from '../utils';
 import { baseUrl } from '../../sitemap';
 
-
 export async function generateStaticParams() {
   let projects = getProjects();
 
@@ -72,12 +71,6 @@ export default function Blog({ params }) {
             '@type': 'BlogPosting',
             headline: project.metadata.title,
             description: project.metadata.description,
-            // datePublished: project.metadata.publishedAt,
-            // dateModified: project.metadata.publishedAt,
-            // description: project.metadata.summary,
-            // image: project.metadata.image
-            //   ? `${baseUrl}${project.metadata.image}`
-            //   : `/og?title=${encodeURIComponent(project.metadata.title)}`,
             url: `${baseUrl}/projects/${project.slug}`,
             author: {
               '@type': 'Person',
@@ -87,14 +80,17 @@ export default function Blog({ params }) {
         }}
       />
       <div className="text-sm loading-element">
-        <article className="max-w-xl pt-3 pb-4 prose ">
-          <div className="mb-8 ">
+        <article className="max-w-xl pt-3 pb-4 mx-auto prose">
+          <div className="mb-8">
             <h1 className="mb-1 font-semibold">{project.metadata.title}</h1>
             <div className="flex items-center justify-between mt-2">
               <p className="text-secondary">{project.metadata.description}</p>
             </div>
             <hr className="my-6" />
-            <CustomMDX source={project.content} />
+
+            <div className="">
+              <CustomMDX source={project.content} />
+            </div>
           </div>
         </article>
       </div>
