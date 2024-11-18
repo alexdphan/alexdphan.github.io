@@ -10,7 +10,7 @@ const greetingVariations = [
   'Nice to see you',
   'Happy you made it',
   'Welcome to the space',
-  'Awesome to have you around',
+  'Awesome to see you',
   'Great to see you here',
 ];
 
