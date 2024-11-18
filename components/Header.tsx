@@ -9,20 +9,17 @@ import ScrambleText from 'components/ScrambleEffect';
 export function Header() {
   return (
     <header className="flex justify-center py-8 pt-6 pb-0">
-      <Link href="/" passHref>
+      {/* <Link href="/" passHref>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
           <Button variant="link" className="link-with-animation">
-            {/* <div style={{ width: '40px', height: '15px' }}> */}
-            {/* <ScrambleText text="Home" delay={3.25} /> */}
             Home
-            {/* </div> */}
           </Button>
         </motion.div>
-      </Link>
+      </Link> */}
       <Link href="/about" passHref>
         <motion.div
           initial={{ opacity: 0 }}
@@ -30,10 +27,7 @@ export function Header() {
           transition={{ duration: 0.5 }}
         >
           <Button variant="link" className="link-with-animation">
-            {/* <div style={{ width: '50px', height: '15px' }}> */}
-            {/* <ScrambleText text="About" delay={3.25} /> */}
-            About
-            {/* </div> */}
+            Home
           </Button>
         </motion.div>
       </Link>

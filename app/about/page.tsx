@@ -71,7 +71,7 @@ export default async function About({ params }) {
       <div className="">
         <article className="max-w-xl pt-8 mx-auto text-sm loading-element ">
           <AboutPresent />
-          <hr className="my-4" />
+          <hr className="mb-4" />
           <CustomMDX source={about.content} />
         </article>
       </div>

@@ -16,7 +16,7 @@ export async function ProjectList() {
           return 1;
         })
         .map((post) => (
-          <div className="mb-8 ">
+          <div className="mb-8" key={post.slug}>
             <p className=" w-[100px] tabular-nums"></p>
             <h2 className="inline-block mb-1 font-semibold">
               <Link
