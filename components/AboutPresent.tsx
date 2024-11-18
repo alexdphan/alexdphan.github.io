@@ -50,7 +50,7 @@ export function AboutPresent() {
         <div className="flex items-center h-[40px]">
           <div className="text-4xl font-thin patriot-bold">AP</div>
         </div>
-        <div className="flex flex-col items-end gap-2">
+        <div className="flex flex-col items-end gap-0">
           <div className="h-[20px]">
             {!isLoading && (
               <ScrambleText
